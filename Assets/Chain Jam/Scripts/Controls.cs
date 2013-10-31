@@ -79,7 +79,7 @@ public class Controls : MonoBehaviour {
 		
 		//jump
 		if (ChainJam.GetButtonPressed(GetComponent<Player>().id,ChainJam.BUTTON.A)){
-			Debug.Log("Oppa!");
+			GetComponent<PlayerJump>().JumpToRandomPlatform();
 		}
 		
 		//shoot
