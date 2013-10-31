@@ -18,6 +18,8 @@ public class Controls : MonoBehaviour {
 	public float inertiaX = 100f;
 	public float inertiaY = 100f;
 	
+	public float muzzle = 1f;
+	
 	float axisX = 0f;
 	float axisY = 0f;
 	float rotationY = 0F;
@@ -93,7 +95,7 @@ public class Controls : MonoBehaviour {
 	}
 	
 	void Shoot(){
-		Bullet bullet = (Bullet) Instantiate(BulletPrefab, transform.position + transform.forward , transform.rotation);
+		Bullet bullet = (Bullet) Instantiate(BulletPrefab, transform.position + transform.forward * muzzle , transform.rotation);
      	bullet.rigidbody.AddForce(transform.forward * bullet.speed);
 	}
 }
