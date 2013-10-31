@@ -5,6 +5,7 @@ public class Bullet : MonoBehaviour {
 
 	public float speed = 2000f;
 	public float strength = 1f;
+	public float radius = 100f;
 	public float lifespan = 5f;
 	
 	void Start(){
@@ -17,15 +18,14 @@ public class Bullet : MonoBehaviour {
 	}
 	
 	void OnTriggerEnter(Collider col){
-		
-		Debug.Log("A");
-		
+				
 		GameObject.Destroy(this.gameObject);
 		//TODO EKSPLOZION
 		
-		if (col.tag.Equals("Player")){
-			col.rigidbody.AddForce(rigidbody.velocity * strength);
-			
+		GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+		
+		foreach(GameObject p in players){
+			p.rigidbody.AddExplosionForce(strength,transform.position,radius);	
 		}
 	}
 }
