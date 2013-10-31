@@ -82,7 +82,6 @@ public class Controls : MonoBehaviour {
 		
 		//shoot
 		if (ChainJam.GetButtonJustPressed(GetComponent<Player>().id,ChainJam.BUTTON.B)){
-			Debug.Log("BLAM BLAM BLAM!");
 			Shoot();
 		}
 	}
@@ -94,7 +93,7 @@ public class Controls : MonoBehaviour {
 	}
 	
 	void Shoot(){
-		Bullet bullet = (Bullet) Instantiate(BulletPrefab, transform.position, transform.rotation);
+		Bullet bullet = (Bullet) Instantiate(BulletPrefab, transform.position + transform.forward , transform.rotation);
      	bullet.rigidbody.AddForce(transform.forward * bullet.speed);
 	}
 }
