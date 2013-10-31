@@ -6,7 +6,8 @@ using System.Collections;
 public class Platform : MonoBehaviour
 {
     public static List<Platform> Platforms = new List<Platform>(); 
-    private Vector3 _jumpTo;
+    [SerializeField]
+    private Vector3 _jumpTo = new Vector3();
 
     public Vector3 JumpTo
     {
@@ -38,6 +39,6 @@ public class Platform : MonoBehaviour
 
     void OnDrawGizmos()
     {
-        Gizmos.DrawSphere(_jumpTo, 1.0f);
+        Gizmos.DrawSphere(transform.position + _jumpTo, 1.0f);
     }
 }
