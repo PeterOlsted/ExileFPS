@@ -115,7 +115,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 6904e99408362eb46b8f3383b959f37b, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -316,6 +316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fa394e8bb8d31440bc3b3208780982d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BulletPrefab: {fileID: 11400000, guid: ccd4666d0793d6344b54f23ea4cb3aa8, type: 2}
   sensitivityX: 30
   sensitivityY: 30
   minimumX: -360
@@ -587,6 +588,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fa394e8bb8d31440bc3b3208780982d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BulletPrefab: {fileID: 11400000, guid: ccd4666d0793d6344b54f23ea4cb3aa8, type: 2}
   sensitivityX: 30
   sensitivityY: 30
   minimumX: -360
@@ -1017,6 +1019,10 @@ Prefab:
       propertyPath: m_BackGroundColor.b
       value: .196078435
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 9d4133d5d30b644bd87802a347eaccbe, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6904e99408362eb46b8f3383b959f37b, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9d4133d5d30b644bd87802a347eaccbe, type: 2}
   m_RootGameObject: {fileID: 813840963}
@@ -1348,6 +1354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fa394e8bb8d31440bc3b3208780982d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BulletPrefab: {fileID: 11400000, guid: ccd4666d0793d6344b54f23ea4cb3aa8, type: 2}
   sensitivityX: 30
   sensitivityY: 30
   minimumX: -360
@@ -1523,6 +1530,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fa394e8bb8d31440bc3b3208780982d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BulletPrefab: {fileID: 11400000, guid: ccd4666d0793d6344b54f23ea4cb3aa8, type: 2}
   sensitivityX: 30
   sensitivityY: 30
   minimumX: -360
@@ -1633,6 +1641,52 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_HDR: 0
+--- !u!1 &1969023938
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1969023940}
+  - 131: {fileID: 1969023939}
+  m_Layer: 0
+  m_Name: Scopes
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!131 &1969023939
+GUITexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1969023938}
+  m_Enabled: 1
+  m_Texture: {fileID: 2800000, guid: bb9f722f02e8bbf4494a884c10d37092, type: 3}
+  m_Color: {r: .5, g: .5, b: .5, a: .5}
+  m_PixelInset:
+    serializedVersion: 2
+    x: -32
+    y: -32
+    width: 64
+    height: 64
+  m_LeftBorder: 0
+  m_RightBorder: 0
+  m_TopBorder: 0
+  m_BottomBorder: 0
+--- !u!4 &1969023940
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1969023938}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .5, y: .5, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
 --- !u!1 &2059758184
 GameObject:
   m_ObjectHideFlags: 0

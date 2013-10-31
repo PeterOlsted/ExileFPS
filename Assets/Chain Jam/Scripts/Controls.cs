@@ -4,6 +4,8 @@ using System.Collections;
 [AddComponentMenu("Camera-Control/Mouse Look")]
 public class Controls : MonoBehaviour {
 	
+	public Bullet BulletPrefab;
+	
 	public float sensitivityX = 10F;
 	public float sensitivityY = 10F;
 
@@ -79,17 +81,20 @@ public class Controls : MonoBehaviour {
 		}
 		
 		//shoot
-		if (ChainJam.GetButtonPressed(GetComponent<Player>().id,ChainJam.BUTTON.B)){
+		if (ChainJam.GetButtonJustPressed(GetComponent<Player>().id,ChainJam.BUTTON.B)){
 			Debug.Log("BLAM BLAM BLAM!");
+			Shoot();
 		}
 	}
 	
 	void Start ()
 	{
-		// Make the rigid body not change rotation
 		if (rigidbody)
 			rigidbody.freezeRotation = true;
-		
-		
+	}
+	
+	void Shoot(){
+		Bullet bullet = (Bullet) Instantiate(BulletPrefab, transform.position, transform.rotation);
+     	bullet.rigidbody.AddForce(transform.forward * bullet.speed);
 	}
 }

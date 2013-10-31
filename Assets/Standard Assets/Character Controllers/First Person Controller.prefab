@@ -202,6 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fa394e8bb8d31440bc3b3208780982d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BulletPrefab: {fileID: 11400000, guid: ccd4666d0793d6344b54f23ea4cb3aa8, type: 2}
   sensitivityX: 30
   sensitivityY: 30
   minimumX: -360
