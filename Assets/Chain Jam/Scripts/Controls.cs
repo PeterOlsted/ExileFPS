@@ -97,5 +97,6 @@ public class Controls : MonoBehaviour {
 	void Shoot(){
 		Bullet bullet = (Bullet) Instantiate(BulletPrefab, transform.position + transform.forward * muzzle , transform.rotation);
      	bullet.rigidbody.AddForce(transform.forward * bullet.speed);
+		bullet.author = GetComponent<Player>();
 	}
 }
